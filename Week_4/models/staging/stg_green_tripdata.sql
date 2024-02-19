@@ -5,6 +5,7 @@
 }}
 
 select 
+    {{ dbt_utils.surrogate_key(['vendorid', 'lpep_pickup_datetime']) }} as tripid,
     cast(VendorID as integer) as vendorid,
     cast(RatecodeID as integer) as ratecodeid,
     cast(PULocationID as integer) as pickup_locationid,

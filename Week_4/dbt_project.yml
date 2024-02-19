@@ -36,7 +36,16 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 
 models:
-  my_new_project:
+  nyc_tripdata:
     # Applies to all files under models/example/
     example:
       +materialized: table
+
+seeds:
+  nyc_tripdata:
+    taxi_zone_lookup:
+      +column_types:
+        locationid: numeric
+
+vars:
+  surrogate_key_treat_nulls_as_empty_strings: True
