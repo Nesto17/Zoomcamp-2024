@@ -38,8 +38,10 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   nyc_tripdata:
     # Applies to all files under models/example/
-    example:
-      +materialized: table
+    staging:
+        materialized: view
+    core:
+        materialized: table
 
 seeds:
   nyc_tripdata:
@@ -49,3 +51,4 @@ seeds:
 
 vars:
   surrogate_key_treat_nulls_as_empty_strings: True
+  payment_type_values: [1, 2, 3, 4, 5, 6]
