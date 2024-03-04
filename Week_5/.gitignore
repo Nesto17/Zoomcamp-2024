@@ -1,0 +1,6 @@
+.ipynb_checkpoints/
+.venv/
+fhv/
+spark-3.5.1-bin-hadoop3/
+fhv_tripdata_2019-10.csv
+taxi_zone_lookup.csv
